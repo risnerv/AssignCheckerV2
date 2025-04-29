@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Our Web App</h2>
+    <p>This page explains more about the app.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Web App</p>
+  </footer>
+</body>
+</html>
+
+
+event.preventDefault(); // Prevent the default form submission (page reload)
+
+// Retrieve input value
+const inputData = datasetIP.value;
+
+if(datasetIP.value =='' || schoolIP.value == '' || yearIP.value =='')
+{
+outputDiv.textContent = 'Please enter a Data Set Number, School Code AND Year.'
+}
+else
+{
+// Optionally, process the data (e.g., manipulate, calculate, etc.)
+const newData = assignment3();
+
+// Display the new data in the output div
+//outputDiv.textContent = newData;
+
+document.getElementById('meanResult').textContent = newData[0] ? 'Valid' : 'Invalid';
+document.getElementById('confResult').textContent = newData[1] ? 'Valid' : 'Invalid';
+document.getElementById('inc/decResult').textContent = newData[2] ? 'Valid' : 'Invalid';
+document.getElementById('slopeResult').textContent = newData[3] ? 'Valid' : 'Invalid';
+document.getElementById('confSlopeResult').textContent = newData[4] ? 'Valid' : 'Invalid';
+
+if(newData[0] && newData[1] && newData[2] && newData[3] && newData[4])
+{
+outputDiv.textContent = 'Validation Code:', validCode(datasetIP.value * schoolIP.value * yearIP.value);
+}
+}
+
+// Optionally clear the input field after submission
+inputField.value = '';

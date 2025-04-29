@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 2</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Assignment 2</h1>
+    <nav>
+      <ul>
+        <li><a href="MainMenu.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Please fill in the following inputs and click submit</h2>
+    <form  id="inputFormAssign1">
+      <label for="dataset">Data Set Number:</label><br>
+      <input type="number" id="dataset" name="dataset" min="1" max="100"><br>
+      <label for="school">School Number:</label><br>
+      <input type="number" id="school" name="school" min="1" max="1000"><br>
+      <label for="year">School Year:</label><br>
+      <input type="number" id="year" name="year" min="2000" max="2100"><br>
+      <label for="iQ">Interquartile Range:</label><br>
+      <input type="number" id="iQ" name="iQ" step="any"><br>
+      <span class="result" id="iQResult"></span><br><br>
+
+      <label for="ninth">9th Decil:</label><br>
+      <input type="number" id="ninth" name="ninth" step="any"><br>
+      <span class="result" id="ninthResult"></span><br>
+
+      <label for="median">Median:</label><br>
+      <input type="number" id="median" name="median" step="any"><br>
+      <span class="result" id="medianResult"></span><br>
+
+      Regression Equation
+      <br><br>
+      KWH = 
+      <label for="regresA"></label>
+      <input type="number" id="regresA" name="regresA" step="any">
+      <span class="result" id="regresAResult"></span>     
+       
+      x Temp + 
+      <label for="regresB"></label>
+      <input type="number" id="regresB" name="regresB" step="any">
+      <span class="result" id="regresBResult"></span>
+      <input type="submit">
+    </form>
+    <p></p>
+  </main>
+  <pre id="output"></pre>
+  <script src="PRNG.js"></script>
+  <script src="assignmentChecker.js"></script>
+  <script src="formAlg.js"></script>
+
+
+  <script>
+      // Select DOM elements
+      const form = document.getElementById('inputFormAssign1');
+      const datasetIP = document.getElementById('dataset');
+      const schoolIP = document.getElementById('school');
+      const yearIP = document.getElementById('year');
+      const mean = document.getElementById('mean');
+      const outputDiv = document.getElementById('output');
+      
+
+      // Event listener for form submission
+      form.addEventListener('submit', function(event) {event.preventDefault(); assignment2Alg();});
+  </script> 
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

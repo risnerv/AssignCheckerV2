@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 3</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Assignment 3</h1>
+    <nav>
+      <ul>
+        <li><a href="MainMenu.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Please fill in the following inputs and hit submir</h2>
+    <form  id="inputFormAssign1">
+      <label for="dataset">Data Set Number:</label><br>
+      <input type="number" id="dataset" name="dataset" min="1" max="100"><br>
+      <label for="school">School Number:</label><br>
+      <input type="number" id="school" name="school" min="1" max="1000"><br>
+      <label for="year">School Year:</label><br>
+      <input type="number" id="year" name="year" min="2000" max="2100"><br>
+      <br>
+      We estimate that the average score is
+      <label for="mean"></label>
+      <input type="number" id="mean" name="mean" placeholder ="Mean of Score data" step="any"><br>
+      <span class="result" id="meanResult"></span><br><br>
+
+      We are 95% confident that this is accurate to within ± 
+      <label for="conf"></label>
+      <input type="number" id="conf" name="conf" placeholder= "Convidence interval" step="any"><br>
+      <span class="result" id="confResult"></span><br><br>
+
+      We estimate that for every degree increase, the KWH usage will
+      <label for="inc/dec"></label>
+      <select id="inc/dec" name="inc/dec">
+        <option value= 1>Increase</option>
+        <option value= 2>Decrease</option>
+       by 
+       <label for="slope"></label><br>
+       <input type="number" id="slope" name="slope" placeholder ="Slope" step="any"><br>
+       <span class="result" id="inc/decResult"></span>
+       <span class="result" id="slopeResult"></span><br><br>      
+
+       We are 95% confident that is is accurate to within ±
+      <label for="confSlope"></label>
+      <input type="number" id="confSlope" name="confSlope" step="any"><br>
+      <span class="result" id="confSlopeResult"></span><br><br>      
+      <input type="submit">
+    </form>
+    <p></p>
+  </main>
+  <pre id="output"></pre>
+  <script src="PRNG.js"></script>
+  <script src="assignmentChecker.js"></script>
+  <script src="formAlg.js"></script>
+
+  <script>
+      // Select DOM elements
+      const form = document.getElementById('inputFormAssign1');
+      const datasetIP = document.getElementById('dataset');
+      const schoolIP = document.getElementById('school');
+      const yearIP = document.getElementById('year');
+      const mean = document.getElementById('mean');
+      const outputDiv = document.getElementById('output');
+      
+
+      // Event listener for form submission
+      form.addEventListener('submit', function(event) {event.preventDefault(); assignment3Alg();});
+  </script> 
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

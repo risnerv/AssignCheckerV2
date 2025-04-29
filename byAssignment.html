@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>By Assignment</h1>
+    <nav>
+      <ul>
+        <li><a href="MainMenu.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Please fill in the following inputs and click submit</h2>
+    <form  id="inputFormAssign1">
+      <label for="assignment">Assignment Number:</label><br>
+      <input type="number" id="assignment" name="assignment" min="1" max="100"><br>
+      <label for="school">School Number:</label><br>
+      <input type="number" id="school" name="school" min="1" max="1000"><br>
+      <label for="year">School Year:</label><br>
+      <input type="number" id="year" name="year" min="1990" max="2025"><br>
+      <label for="pass">Passkey:</label><br>
+      <input type="number" id="pass" name="pass" ><br>
+      <br>
+      Search for:
+      <select id="search" name="Search">
+        <option value="validCode">Validation Code</option>
+        <option value="correct">Correct Answers</option>
+        <option value="both">Both</option>
+     </select>
+    <input type="submit">
+    </form>
+    <p></p>
+  </main>
+  <pre id="output"></pre>
+  <script src="PRNG.js"></script>
+  <script src="assignmentChecker.js"></script>
+  <script src="formAlg.js"></script>
+  <script>
+      // Select DOM elements
+      const form = document.getElementById('inputFormAssign1');
+      const assignIP = document.getElementById('assignment');
+      const schoolIP = document.getElementById('school');
+      const yearIP = document.getElementById('year');
+      const passInput = document.getElementById('pass');
+      const search = document.getElementById('search')
+      const outputDiv = document.getElementById('output'); // Add reference to the output div
+      
+
+      // Event listener for form submission
+      form.addEventListener('submit', function(event) {event.preventDefault(); byAssignmentAlg();});
+  </script> 
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+</html>

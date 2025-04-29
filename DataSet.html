@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Set
+  </title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Data Set</h1>
+    <nav>
+      <ul>
+        <li><a href="MainMenu.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <form  id="inputForm">
+    <label for="dataset">Data Set Number:</label><br>
+    <input type="number" id="dataset" name="dataset" min="1" max="100"><br>
+    <label for="school">School Number:</label><br>
+    <input type="number" id="school" name="school" min="1" max="1000"><br>
+    <label for="year">School Year:</label><br>
+    <input type="number" id="year" name="year" min="1990" max="2025"><br>
+    <input type="submit">
+  </form>
+</main>
+
+
+<pre id="output"></pre>
+  <script src="PRNG.js"></script>
+  <script src="assignmentChecker.js"></script>
+  <script src="formAlg.js"></script>
+
+<script>
+  const form = document.getElementById('inputForm');
+  const outputDiv = document.getElementById('output');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    datasetAlg();
+  });
+
+  console.log("assignmentChecker loaded?", typeof getDataset); // should say 'function'
+</script>
+</body>
+</html>
